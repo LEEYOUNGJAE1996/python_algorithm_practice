@@ -8,7 +8,10 @@ def selectionSort(a, n):
         for j in range(i+1, n+1):
             if a[minIndex] > a[j]:
                 minIndex = j
-            a[minIndex], a[i] = a[i], a[minIndex]
+        a[minIndex], a[i] = a[i], a[minIndex]
+
+
+# 정렬으 성곡했는지 표시
 
 
 def checkSort(a, n):

@@ -11,6 +11,8 @@ name = "LEE"
 
 num_char = len(input("what's your name?  "))
 
-type(num_char)
+print(type(num_char))
+print(type(float(num_char)))
+print(type(str(num_char)))
 new_num_char = str(num_char)
 print("Hello " + new_num_char + "!!")

@@ -14,6 +14,8 @@ nr_numbers = int(input(f"How many numbers would you like?\n"))
 
 # Eazy Level - Order not randomised:
 # e.g. 4 letter, 2 symbol, 2 number = JduE&!91
+
+# 내 코드
 password = ""
 for count in range(0, nr_letters):
     password += letters[random.randint(0, 52)]
@@ -22,6 +24,22 @@ for count in range(0, nr_symbols):
 for count in range(0, nr_numbers):
     password += numbers[random.randint(0, 9)]
 print(password)
+
+# 강의 코드
+password_lec = ""
+for count in range(0, nr_letters):
+    password_lec += random.choice(letters)
+for count in range(0, nr_symbols):
+    password_lec += random.choice(symbols)
+for count in range(0, nr_numbers):
+    password_lec += random.choice(numbers)
+print(password_lec)
+
+
+# random.choice( list 타입 변수)
+# 리스트 항목에서 램덤으로 값을 선택
+# 다른 것도 같을라나?
+
 # Hard Level - Order of characters randomised:
 # e.g. 4 letter, 2 symbol, 2 number = g^2jk8&P
 password_hard = ""
@@ -44,6 +62,26 @@ for count in range(0, nr_letters+nr_numbers+nr_symbols):
             password_hard += symbols[random.randint(0, 8)]
             symbol_count += 1
             break
-
-
 print(password_hard)
+
+# 강의 코드
+password_list = []
+for count in range(0, nr_letters):
+    password_list.append(random.choice(letters))
+for count in range(0, nr_symbols):
+    password_list.append(random.choice(symbols))
+for count in range(0, nr_numbers):
+    password_list.append(random.choice(numbers))
+# How to shuffle the list?
+# 구글 검색 -> how to change the order in a list python?
+print(password_list)
+random.shuffle(password_list)
+# . random.shuffle(x)
+# This is used to shuffle the sequence in place. A sequence can be any list/tuple containing elements.
+print(password_list)
+# string으로 for구문으로 더해주기만 하면 완성
+password_hard_lec = ""
+for char in password_list:
+    # 주의 char is not integer type data  list에서 하나의 값을 가지고 있는 형태
+    password_hard_lec += char
+print(password_hard_lec)

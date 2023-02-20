@@ -85,3 +85,8 @@ for char in password_list:
     # 주의 char is not integer type data  list에서 하나의 값을 가지고 있는 형태
     password_hard_lec += char
 print(f"your password : {password_hard_lec}")
+
+
+# key point
+# random 내의 모르는 메소드 활용 - random.choice() random.shuffle()
+# print(f"{}") 형태 기억할 것

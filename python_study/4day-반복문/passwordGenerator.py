@@ -74,7 +74,7 @@ for count in range(0, nr_numbers):
     password_list.append(random.choice(numbers))
 # How to shuffle the list?
 # 구글 검색 -> how to change the order in a list python?
-print(password_list)
+print(f"your password : {password_list}")
 random.shuffle(password_list)
 # . random.shuffle(x)
 # This is used to shuffle the sequence in place. A sequence can be any list/tuple containing elements.
@@ -84,4 +84,4 @@ password_hard_lec = ""
 for char in password_list:
     # 주의 char is not integer type data  list에서 하나의 값을 가지고 있는 형태
     password_hard_lec += char
-print(password_hard_lec)
+print(f"your password : {password_hard_lec}")

@@ -1,5 +1,6 @@
 # exercise
 # Write your code below this line 👇
+import math
 
 
 def paint_calc(height, width, cover):

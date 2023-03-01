@@ -3,6 +3,8 @@
 
 # 첫 번째 글자만 대문자로 만들기
 def format_name(names):
+    """Take a first and last name and format it 
+    to return the title case version of the name"""
     after_name = ""
     # split으로 나눠 리스트 형태로 존재하기 떄문에 이와 같이 비교를 해야한다.
     if names == []:

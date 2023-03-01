@@ -104,3 +104,8 @@ def game_start():
 print(art.logo)
 game_start()
 print("게임을 종료합니다.")
+
+
+# list 총 합을 더해주는 sum 이라는 함수가 이미 존재
+# list에서 특정 값을 찾아 제거하는 함수 remove가 존재
+# list를 다루는 함수들에 대해서 공부할 필요가 있음을 인지

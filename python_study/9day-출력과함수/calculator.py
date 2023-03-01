@@ -26,12 +26,12 @@ def cal(a, b, operation):
 
 def continueOrNot(input):
     if input.lower() == 'y':
-        return False
+        return False, True
     elif input.lower() == 'n':
-        return True
+        return True, True
     else:
-        print("you enter worng value. try again")
-        return False
+        print("you enter worng value.system is out")
+        return False, False
 
 
 print(cal_art.logo)
@@ -39,7 +39,8 @@ print(cal_art.logo)
 # start
 newthing = True
 result = 0
-while True:
+should_continue = True
+while should_continue:
     if newthing == True:
         result = 0
         fir_number = int(input("What's the first number >> "))
@@ -54,5 +55,5 @@ while True:
         print("you enter worng value")
     else:
         print(f"{fir_number} {op} {sec_number} = {result}")
-    newthing = continueOrNot(input(
+    newthing, should_continue = continueOrNot(input(
         f"Type 'y' to continue calculating with {result}, or type 'n' to start a new calculation >>"))

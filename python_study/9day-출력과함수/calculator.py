@@ -2,6 +2,14 @@ import cal_art
 
 
 def cal(a, b, operation):
+    """
+    operation에 따라서 원하는 계산 결과를 반환한다.
+    +의 경우 a+b
+    -의 경dn a-b
+    *의 경우 a*b
+    /의 경우 a/b
+    의 결과를 반환    
+    """
     if operation == "+":
         return a + b
     elif operation == "-":

@@ -1,6 +1,6 @@
 # 230302
 import random as rd
-
+import art
 
 RANDOM_NUMBER = rd.randrange(1, 100)
 
@@ -17,6 +17,7 @@ def game(life):
         return 0
 
 
+print(art.logo)
 print("Welcome to the Number Guessing Game!")
 print("I'm thinking of a number between 1 and 100.")
 life = 0

@@ -75,3 +75,8 @@ while turn_on:
         turn_on = False
     else:
         print("you have entered an invalid value.")
+
+
+# 개선해야 할점
+# 함수를 작성한 후 함수에 대한 설명을 추가할 것
+# DOCSTRING("""    """ )을 통해서 설명을 추가해야한다.

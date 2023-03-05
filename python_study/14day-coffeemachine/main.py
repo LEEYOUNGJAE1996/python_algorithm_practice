@@ -43,7 +43,9 @@ def cal_resource(choice, resource):
 
 def cal_money(choice, money):
     money -= menu[choice]["cost"]
-    return money, menu[choice]["cost"]
+    global machine_money
+    machine_money += menu[choice]["cost"]
+    return money,
 
 
 machine_money = 0
@@ -61,7 +63,7 @@ while turn_on:
                 # TODO : 함수로 있는 자원을 없애고 남은 계산 후 남은 금액 돌려주는
                 print(f"Here is your {choice}. Enjoy!")
                 resource = cal_resource(choice, resource)
-                refund, machine_money = cal_money(choice, money)
+                refund = cal_money(choice, money)
                 if refund != 0:
                     print(f"Here is ${refund} in change.")
         else:

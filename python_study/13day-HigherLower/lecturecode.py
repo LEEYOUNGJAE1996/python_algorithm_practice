@@ -1,4 +1,4 @@
-from game_data import data
+from data import data
 import random
 from art import logo, vs
 from replit import clear

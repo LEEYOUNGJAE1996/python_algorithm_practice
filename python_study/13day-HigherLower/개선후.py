@@ -8,6 +8,50 @@ import art
 import random as rd
 
 
+def get_data(already):
+    new_item_A = True
+    while new_item_A:
+        A = data.data[rd.randrange(0, len(data.data)-1)]
+        if already == []:
+            return already, A
+        else:
+            for i in already:
+                if i == A:
+                    new_item_A = True
+                    break
+                else:
+                    new_item_A = False
+            if new_item_A == False:
+                already.append(A)
+    return already, A
+
+
+def comparsion(user_answer, A, B):
+    # user가 A를 선택한 경우와 B를 선택한 경우로 나눠서 진행
+    if user_answer == "A":
+        if A["follower_count"] > B["follower_count"]:
+            result = 1
+            game_continue = True
+        else:
+            # 게임 종료 표시
+            game_continue = False
+            result = 0
+    elif user_answer == "B":
+        if A["follower_count"] < B["follower_count"]:
+            result = 1
+            game_continue = True
+        else:
+            # 게임 종료 표시
+            game_continue = False
+            result = 0
+    else:
+        print("You enter the worng value. system out")
+        # 게임 종료
+        game_continue = False
+        result = 0
+    return game_continue, result
+
+
 def play_game():
     # 2 . 로고 보여주고 문제 출력하기
     print(art.logo)
@@ -24,36 +68,9 @@ def play_game():
         print(f"현재까지 맞춘 점수 : {count}")
     # 나왔던 문제가 다시 나오는 경우 다시 문제 뽑기
         # A의 경우
-        new_item_A = True
-
-        ###################### 함수화 하면 좋은 곳 ################################
-        while new_item_A:
-            A = data.data[rd.randrange(0, len(data.data)-1)]
-            if already == []:
-                already.append(A)
-            else:
-                for i in already:
-                    if i == A:
-                        new_item_A = True
-                        break
-                    else:
-                        new_item_A = False
-                if new_item_A == False:
-                    already.append(A)
-
-        # B의 경우
-        new_item_B = True
-        while new_item_B:
-            B = data.data[rd.randrange(0, len(data.data)-1)]
-            for i in already:
-                if i == B:
-                    new_item_B = True
-                    break
-                else:
-                    new_item_B = False
-            if new_item_B == False:
-                already.append(B)
-        ####################################################################################
+        already = []
+        already, A = get_data(already)
+        already, B = get_data(already)
         print(f"A. ", end="")
         print(A["name"])
         print(art.vs)
@@ -63,25 +80,8 @@ def play_game():
         user_answer = input(
             "누가 더 팔로워가 더 많은가? ('A' or 'B' 로 입력해주세요) >> ").upper()
 
-        ############## 비교 함수화#############################################################
-        # user가 A를 선택한 경우와 B를 선택한 경우로 나눠서 진행
-        if user_answer == "A":
-            if A["follower_count"] > B["follower_count"]:
-                count += 1
-            else:
-                # 게임 종료 표시
-                game_continue = False
-        elif user_answer == "B":
-            if A["follower_count"] < B["follower_count"]:
-                count += 1
-            else:
-                # 게임 종료 표시
-                game_continue = False
-        else:
-            print("You enter the worng value. system out")
-            # 게임 종료
-            game_continue = False
-        #############################################################
+        game_continue, result = comparsion(user_answer, A, B)
+        count += result
         print(
             f"{A['name']} : {A['follower_count']}  vs {B['name']} : {B['follower_count']}\n\n\n")
 

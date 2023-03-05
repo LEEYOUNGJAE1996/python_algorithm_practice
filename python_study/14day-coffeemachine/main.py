@@ -50,7 +50,7 @@ machine_money = 0
 turn_on = True
 while turn_on:
     choice = input(
-        "What would you like ? (espresso/latte/cappuccino): ")
+        "What would you like ? (espresso/latte/cappuccino): ").lower()
     if choice == "espresso" or choice == "latte" or choice == "cappuccino":
         # 자원과 비교하는 함수
         canBuy, shortage_resource = enough_resource(choice, resource)

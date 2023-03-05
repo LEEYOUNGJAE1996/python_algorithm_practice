@@ -61,7 +61,7 @@ while turn_on:
             can_buy_coffee = enough_money(money, choice)
             if can_buy_coffee:
                 # TODO : 함수로 있는 자원을 없애고 남은 계산 후 남은 금액 돌려주는
-                print(f"Here is your {choice}. Enjoy!")
+                print(f"Here is your {choice}☕. Enjoy!")
                 resource = cal_resource(choice, resource)
                 refund = cal_money(choice, money)
                 if refund != 0:

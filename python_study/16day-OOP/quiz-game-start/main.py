@@ -17,3 +17,5 @@ while not quizbrain.finish():
     result = quizbrain.correct(input(">>"))
     print(result)
     print(quizbrain.current_score(result))
+print("You've complited quiz game")
+print(f"Your score is :{quizbrain.score}")

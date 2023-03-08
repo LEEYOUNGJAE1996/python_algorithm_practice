@@ -7,6 +7,9 @@ from turtle import Turtle, Screen
 # screen.exitonclick()
 def draw_graph(angle_count, turtle, colors):
     turtle.color(colors)
+    # 내각은 삼각형의 합으로 표현 가능
+    # 삼각형은 180도로 구성
+    # right 회전하는 경우 180 - 변하는 지점에 내각을 뺄 필요가 존재
     angle = 180 - (180 * (angle_count-2) / angle_count)
     for i in range(angle_count):
         turtle.forward(100)

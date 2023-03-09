@@ -4,6 +4,9 @@ from turtle import Turtle, Screen
 
 young = Turtle()
 screen = Screen()
+young.color("violet")
+young.pensize("3")
+young.shape("turtle")
 
 
 def move_forwards():
@@ -23,7 +26,10 @@ def move_counter_clock():
 
 
 def move_clear():
-    screen.clear()
+    young.clear()
+    young.penup()
+    young.home()
+    young.pendown()
 
 
 screen.listen()

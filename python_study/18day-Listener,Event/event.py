@@ -10,11 +10,39 @@ def move_forwards():
     young.forward(10)
 
 
+def move_backwards():
+    young.backward(10)
+
+
+def move_clockwise():
+    young.right(10)
+
+
+def move_counter_clock():
+    young.left(10)
+
+
+def move_clear():
+    screen.clear()
+
+
 screen.listen()
 # space키를 누르면 , 뒤에 구문을 실행
 # 주의 fun에 입력하는 경우 함수의 ()를 입력하면 받아들이지 못함
 # ()를 제외한 상태로 입력
 screen.onkey(key="space", fun=move_forwards)
+# TODO another movement
+# w : forward
+screen.onkey(key="w", fun=move_forwards)
+# s : backward
+screen.onkey(key="a", fun=move_counter_clock)
+# d : clockwise
+screen.onkey(key="s", fun=move_backwards)
+# a : counter-clockwise
+screen.onkey(key="d", fun=move_clockwise)
+# c: clear drawing
+screen.onkey(key="c", fun=move_clear)
+
 
 screen.exitonclick()
 

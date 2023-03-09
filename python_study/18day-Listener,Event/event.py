@@ -17,3 +17,21 @@ screen.listen()
 screen.onkey(key="space", fun=move_forwards)
 
 screen.exitonclick()
+
+# 함수를 input으로
+
+
+# def func_a(something):
+#     print(something())
+
+
+# def func_c(something):
+#     print(something)
+
+
+# def func_b():
+#     return "hello world"
+
+
+# func_a(func_b)
+# func_c(func_b)

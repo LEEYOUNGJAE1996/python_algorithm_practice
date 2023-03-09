@@ -22,6 +22,9 @@ for i in range(7):
     turtle.penup()
     turtle.goto(x=-230, y=y_location[i])
     # list를 통해 객체를 구분해준다.
+    # 이름이 같더라도 다른 주소값을 저장하고 있다
+    # 하지만 이것을 구분하기 위해서는 list에 따로 저장하여 같은 이름이지만
+    # 다른 주소값을 가지고 있음을 구분해줘야 다른 객체로서 사용할 수 있다.
     turtle_list.append(turtle)
 winner = ""
 # user가 내기를 걸음?

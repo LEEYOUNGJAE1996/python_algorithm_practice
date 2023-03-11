@@ -15,6 +15,7 @@ class Animal:
 class Cat(Animal):
     def __init__(self):
         # 상위 클래스의 attributes 와 methods를 상속받기 위한 코드
+        # 필수는 아니다. 왜???
         super().__init__()
     # 상속받은 메소드에 새로운 값 입력하기
 

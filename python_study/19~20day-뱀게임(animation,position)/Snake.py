@@ -53,3 +53,23 @@ class Snake:
     def westDirection(self):
         if self.snake[0].heading() != RIGHT:
             self.snake[0].setheading(LEFT)
+    # 몸 길이 증가
+
+    def plusBody(self):
+        snake_part = Turtle()
+        snake_part.shape("square")
+        snake_part.color("white")
+        snake_part.width(20)
+        snake_part.penup()
+        new_x = self.snake[-1].xcor()
+        new_y = self.snake[-1].ycor()
+        snake_part.setposition(new_x, new_y)
+        self.snake.append(snake_part)
+    # 주의할점 --- 인프리터 언어로 무조건 실행 --- return꼭 하는지 check 필요
+
+    def checkBodyPosition(self):
+        # 슬라이싱을 통해 범위 지정
+        for seg in self.snake[1:]:
+            if self.snake[0].distance(seg) < 10:
+                return False
+        return True

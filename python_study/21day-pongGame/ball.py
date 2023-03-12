@@ -14,6 +14,9 @@ class Ball():
         self.ball.speed("fastest")
         self.ball.color("purple")
 
+    def newBall(self):
+        self.ball.setposition(0, 0)
+
     def upDownMoving(self):
         if self.ball.ycor() > 290 and self.updown == 10:
             self.updown = -10
@@ -23,11 +26,11 @@ class Ball():
     def moving(self):
         new_x = self.ball.xcor()+self.leftRight
         new_y = self.ball.ycor()+self.updown
-        self.ball.setposition(new_x, new_y)
+        self.ball.goto(new_x, new_y)
 
     def checkBar(self, Bar):
         for i in range(len(Bar)):
-            if self.ball.distance(Bar[i]) < 20:
+            if self.ball.distance(Bar[i]) < 30:
                 if self.leftRight == 10:
                     self.leftRight = -10
                 else:

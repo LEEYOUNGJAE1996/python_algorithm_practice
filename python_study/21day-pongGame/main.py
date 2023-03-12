@@ -38,12 +38,29 @@ ball = Ball()
 # 게임 시작
 game_on = True
 while game_on:
-    time.sleep(0.1)
-    screen.update()
+
     ball.upDownMoving()
     ball.checkBar(Bar=bar1.bar)
     ball.checkBar(Bar=bar2.bar)
+    if ball.ball.xcor() < -450:
+        score2.plusScore()
+        ball.newBall()
+    elif ball.ball.xcor() > 450:
+        score1.plusScore()
+        ball.newBall()
+    if score1.grade >= 5:
+        game_on = False
+        del middle_line
+        score1.gameOver("Player1")
+        score2.clear()
+    elif score2.grade >= 5:
+        game_on = False
+        del middle_line
+        score2.gameOver("Player2")
+        score1.clear()
     ball.moving()
+    time.sleep(0.01)
+    screen.update()
 
 
 screen.exitonclick()

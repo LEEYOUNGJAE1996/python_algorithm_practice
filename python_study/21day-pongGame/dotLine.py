@@ -3,26 +3,18 @@ from turtle import Turtle
 
 class DotLine():
     def __init__(self):
-        for i in range(-300, 500, 30):
-            self.dotLine = []
+        self.dotLine = []
+        for i in range(-300, 300, 10):
             dot_part = Turtle()
+            dot_part.penup()
             dot_part.shape("square")
             dot_part.color("white")
-            dot_part.shapesize(0.5)
-            dot_part.penup()
-            dot_part.setposition(0, i)
-            dot_part1 = Turtle()
-            dot_part1.shape("square")
-            dot_part1.color("white")
-            dot_part1.shapesize(0.5)
-            dot_part1.penup()
-            dot_part1.setposition(0, i+10)
-            dot_part2 = Turtle()
-            dot_part2.shape("square")
-            dot_part2.color("black")
-            dot_part2.shapesize(0.5)
-            dot_part2.penup()
-            dot_part2.setposition(0, i+20)
+            dot_part.shapesize(stretch_wid=0.25)
+            dot_part.goto(0, i)
             self.dotLine.append(dot_part)
-            self.dotLine.append(dot_part1)
-            self.dotLine.append(dot_part2)
+
+    def __del__(self):
+        print(self.dotLine)
+        for i in range(len(self.dotLine)):
+            print("중앙선 객체를 삭제합니다.")
+            self.dotLine[i].hideturtle()

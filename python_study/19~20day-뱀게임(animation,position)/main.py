@@ -51,10 +51,13 @@ while game_on:
         score.plusScore()
     # 벽에 충돌했는지 안했는지 판단.
     if snake.snake[0].xcor() < -300 or snake.snake[0].xcor() > 280 or snake.snake[0].ycor() < -300 or snake.snake[0].ycor() > 280:
-        game_on = False
-    if game_on != False:
-        game_on = snake.checkBodyPosition()
-    if game_on == False:
-        score.gameOver()
+        score.reset()
+        snake.reset()
+        score.update_scoreboard()
+    if snake.checkBodyPosition() == False:
+        score.reset()
+        snake.reset()
+        score.update_scoreboard()
+
 # 클릭 할 경우 화면 탈출
 screen.exitonclick()

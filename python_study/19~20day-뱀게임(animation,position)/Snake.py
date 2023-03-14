@@ -10,6 +10,9 @@ DOWN = 270
 class Snake:
     def __init__(self):
         self.snake = []
+        self.create_snake()
+
+    def create_snake(self):
         for i in range(3):
             snake_part = Turtle()
             snake_part.shape("square")
@@ -73,3 +76,9 @@ class Snake:
             if self.snake[0].distance(seg) < 10:
                 return False
         return True
+
+    def reset(self):
+        for snake in self.snake:
+            snake.goto(1000, 1000)
+        self.snake.clear()
+        self.create_snake()

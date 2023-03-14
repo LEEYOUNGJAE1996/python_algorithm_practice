@@ -10,7 +10,8 @@ class Score(Turtle):
     def __init__(self):
         super().__init__()
         self.grade = 0
-        self.high_score = 0
+        with open("D:\\workstation\\python_algorithm_practice\\python_study\\19~20day-뱀게임(animation,position)\\data.txt", mode="r", encoding='UTF8') as data:
+            self.high_score = int(data.read())
         # 거북이는 제거
         self.hideturtle()
         self.color("white")
@@ -43,3 +44,8 @@ class Score(Turtle):
             self.high_score = self.grade
         self.grade = 0
         self.update_scoreboard()
+        self.checkScoreDB()
+
+    def checkScoreDB(self):
+        with open("D:\\workstation\\python_algorithm_practice\\python_study\\19~20day-뱀게임(animation,position)\\data.txt", mode="w") as data:
+            data.write(f"{self.high_score}")

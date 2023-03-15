@@ -61,3 +61,5 @@ dictionary = {
 # 객체 생성
 data = pandas.DataFrame(dictionary)
 print(data)
+# csv형태로 저장
+data.to_csv("./python_study/24day-CSVdata/new_data.csv")

@@ -30,8 +30,32 @@ def reversing_words(string1):
     return "".join(string1)
 
 
-if __name__ == "__main__":
-    string1 = "오늘 저녁은 무엇을 먹을까?"
-    # 문자열의 경우 불변형 타입이기에 리스트 형태로 바꾼 후 진행할 필요가 있다.
-    string2 = reversing_words(list(string1))
-    print(string2)
+string1 = "1.오늘 저녁은 무엇을 먹을까?"
+# 문자열의 경우 불변형 타입이기에 리스트 형태로 바꾼 후 진행할 필요가 있다.
+string2 = reversing_words(list(string1))
+print(string2)
+
+
+# 반복문 한 번만 사용하는 방법
+
+def reverse_words_brute(string):
+    word, sentence = [], []
+    for character in string:
+        if character != " ":
+            word.append(character)
+        else:
+            if word:
+                sentence.append("".join(word))
+                word = []
+    # 마지막 단어 추가
+    if word != "":
+        sentence.append("".join(word))
+    sentence.reverse()
+    # 띄어씌기를 한 문자열에 join을 수행해야 문자열을 합치는 중간에 띄어쓰기가 포함되서 문자열을 만든다.
+    return " ".join(sentence)
+
+
+string = "2.오늘 저녁은 무엇을 먹을까?"
+# 문자열의 경우 불변형 타입이기에 리스트 형태로 바꾼 후 진행할 필요가 있다.
+string2 = reverse_words_brute(list(string))
+print(string2)

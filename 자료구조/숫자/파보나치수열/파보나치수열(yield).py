@@ -15,5 +15,5 @@ if __name__ == "__main__":
     #  next 함수를 통해 fg에 저장된 값을 하나씩 불러 온다.
     # generator 와 yield 에 대해서
     # https://dojang.io/mod/page/view.php?id=2412
-    for _ in range(12):
+    for _ in range(13):
         print(next(fg), end=" ")

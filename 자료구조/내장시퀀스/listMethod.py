@@ -62,6 +62,7 @@ f.reverse()
 print(f)
 
 # 리스트 언패킹
+print('리스트 언패킹')
 g, *h = [1, 2, 3, 4, 5, 6, 7]
 print(g)
 print(h)

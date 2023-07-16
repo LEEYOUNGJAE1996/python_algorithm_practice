@@ -48,7 +48,7 @@ print("값")
 print(myObj)
 print(newObj)
 print(newObj2)
-print("메모리 주소")S
+print("메모리 주소")
 print(id(myObj))
 print(id(newObj))
 print(id(newObj2))

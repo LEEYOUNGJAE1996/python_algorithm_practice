@@ -30,3 +30,8 @@ start = 1
 # bfs 테스트
 if __name__== "__main__":
     bfs(graph, start, visited)
+
+
+#  중요포인트는 DFS와 유사하지만 처음에 queue에 시작 노드를 넣고 노드를 시작을 인접한 노드를 찾는다는 것이다. 
+#  이를 위해 큐의 첫번째 노드를 가져오고 그 노드와 연결된 노드를 for 을 통해 queue에 넣는 것이다. 
+#  

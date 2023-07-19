@@ -30,7 +30,9 @@ def merge_sort(arr):
     right = arr[mid:]
 
     left = merge_sort(left)
+    print(f"left : {left}")
     right = merge_sort(right)
+    print(f'ringt :{right}')
 
     return merge(left, right)
 

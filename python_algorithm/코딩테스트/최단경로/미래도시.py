@@ -30,10 +30,10 @@ x, k = map(int, input().split())
 
 
 # 거리 확인하기 
-for k in range(1,n+1):
+for j in range(1,n+1):
     for a in range(1,n+1):
         for b in range(1,n+1):
-            graph[a][b] = min(graph[a][b],graph[a][k] + graph[k][b])
+            graph[a][b] = min(graph[a][b],graph[a][j] + graph[j][b])
 
 # 수행된 결과를 출력하기
 distance = graph[1][x] + graph[x][k]
@@ -42,3 +42,4 @@ if distance != INF:
     print(distance)
 else:
     print(-1)
+
